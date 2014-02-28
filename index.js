@@ -29,7 +29,6 @@ function ziggy_eval(ziggy) {
 
       if (output.result) return ziggy.say(channel, output.result)
 
-
       ziggy.say(channel, user.nick + ': invalid request!')
     }
   }
