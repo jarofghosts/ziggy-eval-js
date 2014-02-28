@@ -18,7 +18,7 @@ function ziggy_eval(ziggy) {
     sandbox.run(code, do_output)
 
     function do_output(output) {
-      if (output.result) return ziggy.say(channel, result)
+      if (output.result) return ziggy.say(channel, output.result)
 
       if (output.console.length < 5) {
         for (var i = 0, l = output.console.length; i < l; ++i) {
@@ -26,7 +26,7 @@ function ziggy_eval(ziggy) {
         }
       }
 
-      ziggy.say(channel, user.nick + ': invalid request')
+      ziggy.say(channel, user.nick + ': invalid request!')
     }
   }
 }
