@@ -18,11 +18,15 @@ function ziggy_eval(ziggy) {
     sandbox.run(code, do_output)
 
     function do_output(output) {
-      if (output.result === 'null' && output.console.length) {
+      if ((!output.result || output.result === 'null') &&
+          output.console.length) {
         for (var i = 0, l = output.console.length; i < l && i < 5; ++i) {
-          ziggy.say(channel. output.console[i])
+          ziggy.say(channel, output.console[i])
         }
+
+        return
       }
+
       if (output.result) return ziggy.say(channel, output.result)
 
 
