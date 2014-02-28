@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/jarofghosts/ziggy-eval-js",
   "dependencies": {
-    "sandbox": "~0.8.3"
+    "sandbox": "0.8.4"
   }
 }
