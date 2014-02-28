@@ -18,13 +18,13 @@ function ziggy_eval(ziggy) {
     sandbox.run(code, do_output)
 
     function do_output(output) {
-      if (output.result) return ziggy.say(channel, output.result)
-
-      if (output.console.length < 5) {
-        for (var i = 0, l = output.console.length; i < l; ++i) {
+      if (output.result === 'null' && output.console.length) {
+        for (var i = 0, l = output.console.length; i < l && i < 5; ++i) {
           ziggy.say(channel. output.console[i])
         }
       }
+      if (output.result) return ziggy.say(channel, output.result)
+
 
       ziggy.say(channel, user.nick + ': invalid request!')
     }
