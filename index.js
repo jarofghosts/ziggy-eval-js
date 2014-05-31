@@ -2,6 +2,12 @@ var Sandbox = require('sandbox')
   , sandbox = new Sandbox()
 
 var template_rex = /\$\{\s*(.*?)\s*\}/g
+
+ziggy_eval.help = [
+    '!js <code> - evaluate <code> and return result'
+  , 'use ${ <code> } anywhere in a message to evaluate <code>'
+].join('\n')
+
 module.exports = ziggy_eval
 
 function ziggy_eval(ziggy) {
