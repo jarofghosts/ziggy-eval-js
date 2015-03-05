@@ -1,6 +1,6 @@
 {
   "name": "ziggy-eval-js",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "eval js plugin for ziggy",
   "main": "index.js",
   "scripts": {
