@@ -67,15 +67,16 @@ function ziggyEval(ziggy) {
       }
 
       function finallyTalk() {
-        ziggy.say(channel, '"' + message + '"')
+        ziggy.say(channel, '"' + stripNewLines(message) + '"')
       }
     }
 
     function doOutput(output) {
       if((!output.result || output.result === 'null') &&
           output.console.length) {
+
         for(var i = 0, l = output.console.length; i < l && i < 5; ++i) {
-          ziggy.say(channel, output.console[i])
+          ziggy.say(channel, stripNewLines(output.console[i]))
         }
 
         return
@@ -94,4 +95,8 @@ function ziggyEval(ziggy) {
   function parsePm(user, message) {
     return parseMessage(user, user.nick, message)
   }
+}
+
+function stripNewLines(str) {
+  return (str.toString() || '').replace(/\n/g, '\\n')
 }
